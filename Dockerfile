@@ -1,4 +1,4 @@
-FROM       continuumio/miniconda3
+FROM continuumio/miniconda3
 
 RUN \
   apt-get update && \
@@ -18,8 +18,7 @@ RUN apt-get update \
     && rm -rf /opt/openjdk.tar.gz \
     && apt-get -y --purge autoremove curl \
     && ln -sf /opt/jdk/bin/* /usr/local/bin/ \
-    && rm -rf /var/lib/apt/lists/* 
-
+    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /score-client && \
     cd /score-client && \
